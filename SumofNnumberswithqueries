@@ -1,0 +1,9 @@
+theSum=0
+numberofqueries = int(input())
+
+for i in range(numberofqueries):
+    br = [int(x) for x in input().split(',')]
+    for i in br:
+        theSum = theSum+i
+    print(theSum)
+    theSum=0
