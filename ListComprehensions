@@ -1,0 +1,24 @@
+#created an array in a array with a range function
+#created an empty array called answer = []
+#then run a for loop in the array created with the elements 
+#compared it with the if with each element 
+#append the element 
+#print answers
+
+
+if __name__ == '__main__':
+    x = int(raw_input())
+    y = int(raw_input())
+    z = int(raw_input())
+    n = int(raw_input())
+
+    my_arr = [[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1)]
+    answer = []
+
+    for element in my_arr :
+
+        if element[0]+element[1]+element[2] != n:
+            #print(element ) 
+            #print( answer)
+            answer.append(element)
+    print(answer)
