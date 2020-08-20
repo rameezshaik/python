@@ -1,0 +1,27 @@
+import boto3
+
+
+def connecttomyaccount():
+    print("connecting to my account")
+    ec2 = boto3.resource('ec2')
+    createarepository(ec2)
+
+
+def createarepository(ecr):
+    response = ecr.create_repository(
+        repositoryName='project-a/nginx-web-app',
+)
+
+def deleterepository(ecr):
+    response = ecr.delete_repository(
+        force=True,
+        repositoryName='project-a/nginx-web-app',
+)
+
+def main():
+    print('creating and deleting the registiry')
+    connecttomyaccount()
+    createarepository()
+    deleterepository()
+
+main()
